@@ -2,6 +2,8 @@
 
 Infrastructure support repo for the memorial project.
 
+This repo is not the deployment source of truth. Production rollout is handled by a separate GitOps repo.
+
 ## Local validation
 
 ```bash
@@ -16,14 +18,14 @@ bash -n scripts/dev-up.sh scripts/dev-down.sh scripts/dev-reset.sh
 - Docker Compose config
 - shell script syntax
 
+This repo does not push k8s manifests or production deploy jobs from GitHub Actions.
+
 Deployment is handled in the separate GitOps repo, so this repo only carries validation workflow setup.
 
 ## Connect the repo to GitHub
 
-After creating `memorial-infra` on GitHub:
+Connected GitHub repo:
 
 ```bash
-git remote add origin git@github.com:<your-user>/memorial-infra.git
-git branch -M main
-git push -u origin main
+https://github.com/Filipcsupka/memorial-infra
 ```
