@@ -1,0 +1,28 @@
+name: Validate Infra
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-compose:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose
+        run: docker compose -f docker/docker-compose.yml config
+
+  validate-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate shell scripts
+        run: bash -n scripts/dev-up.sh scripts/dev-down.sh scripts/dev-reset.sh

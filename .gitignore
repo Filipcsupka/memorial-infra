@@ -1,0 +1,14 @@
+# local env and tooling
+.claude/
+.claude-flow/
+.swarm/
+.mcp.json
+.ruflo.yml
+ruvector.db
+memorial-web.code-workspace
+
+# local experiments not owned by this repo
+k8s/
+
+# misc
+.DS_Store
